@@ -13,36 +13,35 @@
 </template>
 
 <script>
-  import TodoItem from './TodoItem';
-  import TodoFooter from './TodoFooter';
+import TodoItem from './TodoItem';
+import TodoFooter from './TodoFooter';
 
-  console.log(TodoFooter)
-  export default {
-    name: 'TodoList',
-    components: {
-      TodoItem,
-      TodoFooter
-    },
-    data() {
-      return {
-        title: 'Simple Todo list with Vue',
-        btnTitle: 'Push to add a deal',
-        todos: [],
-        newTodo: '',
-      };
-    },
-    methods: {
-      onSubmit: function() {
-        this.todos.push({
-          id: this.todos.length,
-          text: this.newTodo,
-          active: false,
-          isVisible: true
-        })
-        this.newTodo = '';
-      },
+export default {
+  name: 'TodoList',
+  components: {
+    TodoItem,
+    TodoFooter
+  },
+  data() {
+    return {
+      title: 'Simple Todo list with Vue',
+      btnTitle: 'Push to add a deal',
+      todos: [],
+      newTodo: ''
+    };
+  },
+  methods: {
+    onSubmit: function() {
+      this.todos.push({
+        id: this.todos.length,
+        text: this.newTodo,
+        active: false,
+        isVisible: true
+      });
+      this.newTodo = '';
     }
-  };
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

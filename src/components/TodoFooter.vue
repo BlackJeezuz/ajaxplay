@@ -8,21 +8,22 @@
 
 <script>
 export default {
-  name: "TodoFooter",
-  props: ["todos"],
+  name: 'TodoFooter',
+  props: ['todos'],
+  data() {
+    return {};
+  },
+
   methods: {
     btnClick: function(e) {
       e.target.classList.toggle('is-active');
-      console.log('penis')
     },
 
     filterComplited: function(e) {
-      // if(e.target.classList.contain('is-active')) return;
+      this.btnClick(e);
 
       this.todos.forEach(element => {
-        let visible = element.isVisible;
-
-        if(element.active) {
+        if (element.active) {
           element.isVisible = true;
         } else {
           element.isVisible = false;
@@ -32,9 +33,7 @@ export default {
 
     filterUncomplited: function(e) {
       this.todos.forEach(element => {
-        let visible = element.isVisible;
-
-        if(element.active) {
+        if (element.active) {
           element.isVisible = false;
         } else {
           element.isVisible = true;
@@ -48,7 +47,7 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
