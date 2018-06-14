@@ -1,4 +1,4 @@
-# template_vue
+# vue_news-portal
 
 > A Vue.js project
 
