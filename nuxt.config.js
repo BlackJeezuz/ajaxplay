@@ -1,10 +1,10 @@
 module.exports = {
-  mode: 'spa',
   /*
   ** Headers of the page
   */
+  vendor: ['vuex-persist', 'material-icons'],
   head: {
-    title: 'template_nuxt',
+    title: 'vue-start',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,7 +34,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
+    }
   },
   css: [
     'material-icons/iconfont/material-icons.scss'

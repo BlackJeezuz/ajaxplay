@@ -1,4 +1,4 @@
-# template_nuxt
+# vue-start
 
 > Nuxt.js project
 
