@@ -13,16 +13,23 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "material-icons": "^0.2.3",
+    "net": "^1.0.2",
     "nuxt": "^1.0.0",
+    "tls": "0.0.1",
+    "tunnel": "0.0.6",
     "vuex-persist": "^1.5.2"
   },
   "devDependencies": {
+    "@nuxtjs/proxy": "^1.2.4",
+    "axios-https-proxy-fix": "^0.17.1",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "http-proxy-middleware": "^0.19.0",
     "node-sass": "^4.9.3",
     "nuxt-sass-resources-loader": "^2.0.5",
     "sass-loader": "^7.1.0",

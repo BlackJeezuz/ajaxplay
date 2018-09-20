@@ -17,20 +17,20 @@
     />
     <span class="todo-item__text" ref="text">{{ todo.text }}</span>
     <div class="btn-group">
+      <transition name="drop">
+        <div v-show="isTooltipDisplayed" class="todo-item__tooltip">
+          <nuxt-link class="todo-item__link material-icons" :to="`/${todo.id}`">settings</nuxt-link>
+        </div>
+      </transition>
       <button class="btn-default btn-edit" @click="handleEdit">edit</button>
       <button class="btn-default btn-delete material-icons" @click="handleRemove" title="Remove todo">close</button>
     </div>
-    <transition name="drop">
-      <div v-show="isTooltipDisplayed" class="todo-item__tooltip">
-        <nuxt-link class="todo-item__link" :to="`/todo/${todo.id}`">description</nuxt-link>
-      </div>
-    </transition>
   </li>
 </template>
 
 <script>
 import Checkbox from '../Checkbox'
-import { mapMutations, mapState, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'TodoItem',
@@ -41,38 +41,22 @@ export default {
     id: {
       type: String,
       default: 'todo'
-    }
+    },
+    todo: Object
   },
   data () {
     return {
-      todo: null,
       isTooltipDisplayed: false
     }
   },
-  created () {
-    this.todo = {...this.getTodo(this.id)}
-  },
-  computed: {
-    ...mapState({
-      todos: state => state.todos.todos
-    }),
-    ...mapGetters({
-      getTodo: 'GET_TODO'
-    })
-  },
   methods: {
-    ...mapMutations({
-      removeTodo: 'REMOVE_TODO',
-      editTodo: 'EDIT_TODO',
-      checkTodo: 'CHECK_TODO'
-    }),
+    ...mapActions(['removeTodo', 'editTodo', 'checkTodo']),
     handleEdit () {
       this.$refs.input.style.height = `${this.$refs.text.offsetHeight + 10}px`
       this.$refs.input.disabled = false
       this.$refs.input.focus()
     },
     handleText (text) {
-      this.todo.text = text
       this.editTodo({ id: this.id, text: text })
     },
     handleBlur () {
@@ -82,16 +66,9 @@ export default {
     handleRemove () {
       this.removeTodo(this.id)
     },
-    handleCheck () {
-      this.checkTodo(this.id)
-    }
-  },
-  watch: {
-    todos: {
-      handler: function (todos) {
-        this.todo = {...this.getTodo(this.id)}
-      },
-      deep: true
+    handleCheck (isChecked) {
+      let id = this.id
+      this.checkTodo({ id, isChecked })
     }
   }
 }

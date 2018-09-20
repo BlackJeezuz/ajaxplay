@@ -1,8 +1,11 @@
+const axios = require('axios')
+const https = require('https')
+
 module.exports = {
   /*
   ** Headers of the page
   */
-  vendor: ['vuex-persist', 'material-icons'],
+  vendor: ['vuex-persist', 'material-icons', 'axios'],
   head: {
     title: 'vue-start',
     meta: [
@@ -40,7 +43,33 @@ module.exports = {
     'material-icons/iconfont/material-icons.scss'
   ],
   modules: [
-    ['nuxt-sass-resources-loader', '@/assets/styles/tools/tools.scss']
-  ]
+    ['nuxt-sass-resources-loader', '@/assets/styles/tools/tools.scss'],
+    ['@nuxtjs/proxy', { proxy: ['https://monex.e-cash.pro'] }]
+  ],
+  generate: {
+    routes: function () {
+      const agent = new https.Agent({  
+        rejectUnauthorized: false
+      })
+
+      return axios.get('https://monex.e-cash.pro/_view/list_urls/0/', { httpsAgent: agent })
+      .then((res) => {
+        return res.data.r.filter(item => item.includes('/ru/exchange/')).map(url => {
+          let pageUrl = url.split('/ru/exchange/')[1]
+          return {
+            route: `./exchanges/${pageUrl}`,
+            payload: pageUrl
+          }
+        })
+      })
+    },
+    minify: {
+      collapseWhitespace: false
+    }
+  },
+  plugins: [{
+		src: '~/plugins/persistence.js',
+		ssr: false
+	}]
 }
 

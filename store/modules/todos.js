@@ -2,77 +2,107 @@ import * as mutationTypes from '../types/mutations'
 import * as getterTypes from '../types/getters'
 
 const state = {
-  todos: process.browser ? JSON.parse(localStorage.getItem('todos')) || [] : []
+  todos: []
 }
 
 const mutations = {
-  [mutationTypes.PUSH_TODO] (state, { todo }) {
+  [mutationTypes.PUSH_TODO] (state, todo) {
     state.todos = [...state.todos, todo]
   },
-  [mutationTypes.SET_TODOS] (state, { todos }) {
+  [mutationTypes.SET_TODOS] (state, todos) {
     state.todos = [...todos]
-  },
-  [mutationTypes.REMOVE_TODO] (state, id) {
-    state.todos = [...state.todos.filter(todo => todo.id !== id)]
   },
   [mutationTypes.EDIT_TODO] (state, { id, text }) {
     let todo = state.todos.find(todo => todo.id === id)
     todo.text = text
   },
-  [mutationTypes.FILTER_TODO] (state, filter) {
+  [mutationTypes.CHECK_TODO] (state, { id, isChecked }) {
+    let todo = state.todos.find(todo => todo.id === id)
+    todo.isChecked = isChecked
+  }
+}
+
+const actions = {
+  setTodos: ({ commit }, todos) => {
+    commit(mutationTypes.SET_TODOS, todos)
+  },
+  addTodo: ({ commit }, todo) => {
+    commit(mutationTypes.PUSH_TODO, todo)
+  },
+  removeTodo ({ commit, state }, id) {
+    let todos = [...state.todos.filter(todo => todo.id !== id)]
+    commit(mutationTypes.SET_TODOS, todos)
+  },
+  editTodo ({ commit }, { id, text }) {
+    commit(mutationTypes.EDIT_TODO, { id, text })
+  },
+  checkTodo ({ commit }, { id, isChecked }) {
+    commit(mutationTypes.CHECK_TODO, { id, isChecked })
+  },
+  filterTodos ({ commit, state }, filter) {
+    let todos = []
     switch (filter) {
       case 'All':
-        state.todos = state.todos.map(item => {
+        todos = state.todos.map(item => {
           item.isVisible = true
           return item
         })
         break
       case 'Completed':
-        state.todos = state.todos.map(item => {
+        todos = state.todos.map(item => {
           item.isVisible = item.isChecked
           return item
         })
         break
       case 'Uncompleted':
-        state.todos = state.todos.map(item => {
+        todos = state.todos.map(item => {
           item.isVisible = !item.isChecked
           return item
         })
         break
       default:
-        state.todos = state.todos.map(item => {
+        todos = state.todos.map(item => {
           item.isVisible = true
           return item
         })
         break
     }
+
+    commit(mutationTypes.SET_TODOS, todos)
   },
-  [mutationTypes.REMOVE_COMPLETED] (state) {
-    state.todos = state.todos.filter(todo => !todo.isChecked)
+  removeCompleted ({ commit, state }) {
+    let todos = state.todos.filter(todo => !todo.isChecked)
+    commit(mutationTypes.SET_TODOS, todos)
   },
-  [mutationTypes.COMPLETE_ALL] (state, isCompleted) {
-    state.todos = state.todos.map(todo => {
+  complete ({ commit, state }, isCompleted) {
+    let todos = state.todos.map(todo => {
       todo.isChecked = !isCompleted
       return todo
     })
-  },
-  [mutationTypes.CHECK_TODO] (state, id) {
-    let todo = state.todos.find(todo => todo.id === id)
-    todo.isChecked = !todo.isChecked
+
+    commit(mutationTypes.SET_TODOS, todos)
   }
 }
 
 const getters = {
-  [getterTypes.GET_TODO]: state => id => {
+  [getterTypes.TODOS]: state => state.todos,
+  [getterTypes.TODO]: state => id => {
     return state.todos.find(todo => todo.id === id)
   },
+  [getterTypes.TODOS_COUNT]: state => {
+    return state.todos.filter(todo => todo.isVisible).length
+  },
   [getterTypes.DONE_TODOS_COUNT]: state => {
-    return state.todos.filter(todo => todo.isChecked).length
+    return state.todos.filter(todo => !todo.isChecked).length
+  },
+  [getterTypes.IS_COMPLETED]: (state, getters) => {
+    return !getters[getterTypes.DONE_TODOS_COUNT]
   }
 }
 
 export default {
   state,
   getters,
-  mutations
+  mutations,
+  actions
 }

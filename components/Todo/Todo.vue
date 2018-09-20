@@ -1,11 +1,12 @@
 <template>
   <div class="todo">
-    <todo-header v-model="inputValue" @change="addTodo"/>
+    <todo-header v-model="inputValue" @change="pushTodo"/>
     <transition-group name="fade" class="todo__list" tag="ul">
       <todo-item
         v-for="todo in todos"
         :key="todo.id"
         :id="todo.id"
+        :todo="todo"
         v-show="todo.isVisible"
       />
     </transition-group>
@@ -17,7 +18,7 @@
 import TodoHeader from '../TodoHeader'
 import TodoItem from '../TodoItem'
 import TodoFooter from '../TodoFooter'
-import { mapMutations, mapState } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Todo',
@@ -32,20 +33,20 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      todos: state => state.todos.todos,
-      filter: state => state.filters.filter
+    ...mapGetters({
+      todos: 'TODOS',
+      filter: 'FILTER'
     })
   },
   methods: {
-    addTodo: function () {
+    pushTodo: function () {
       const todo = {
         text: this.inputValue,
         id: this.ID(),
         isChecked: false,
         isVisible: !(this.filter === 'Completed')
       }
-      this.pushTodo({ todo })
+      this.addTodo(todo)
     },
     ID () {
       return '_' + Math.random().toString(36).substr(2, 9)
@@ -61,10 +62,7 @@ export default {
         return todo
       })
     },
-    ...mapMutations({
-      pushTodo: 'PUSH_TODO',
-      setTodos: 'SET_TODOS'
-    })
+    ...mapActions(['setTodos', 'addTodo'])
   }
 }
 </script>
