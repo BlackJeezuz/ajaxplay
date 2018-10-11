@@ -1,0 +1,41 @@
+.icon {
+  &--facebook {
+    color: #3D69C7;
+  }
+
+  &--google-plus {
+    color: #FA4933;
+  }
+
+  &--vk {
+    color: #5B7EB5;
+  }
+
+  &--twitter {
+    color: #35BEF8;
+  }
+
+  &--right-arrow {
+    display: block;
+    transform: rotate(180deg);
+
+    &:before {
+      content: $icon-left-arrow;
+      font-family: $font-name;
+    }
+  }
+  &--down {
+    display: block;
+    transform: rotate(90deg);
+
+    &:before {
+      content: $icon-next;
+      font-family: $font-name;
+    }
+  }
+
+  &-square {
+    @extend %square-icon;
+    display: block;
+  }
+}

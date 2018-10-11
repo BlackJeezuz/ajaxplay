@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="759" viewBox="0 0 1280 759">
+  <defs>
+    <linearGradient id="oval_15-b" x1="50%" x2="50%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#1469EB"/>
+      <stop offset="100%" stop-color="#26BFFF"/>
+    </linearGradient>
+    <rect id="oval_15-a" width="1280" height="759"/>
+    <circle id="oval_15-e" cx="1280" cy="2045" r="2050"/>
+    <filter id="oval_15-d" width="103.7%" height="103.7%" x="-1.9%" y="-2%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="4.5" result="shadowSpreadOuter1"/>
+      <feOffset dy="-6" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.161826313 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(0 66.5)">
+    <mask id="oval_15-c" fill="#fff">
+      <use xlink:href="#oval_15-a"/>
+    </mask>
+    <use fill="url(#oval_15-b)" xlink:href="#oval_15-a"/>
+    <g mask="url(#oval_15-c)" opacity=".505">
+      <g transform="translate(216.333 106.5)">
+        <circle cx="88" cy="88" r="88" fill="#1469EB"/>
+        <rect width="37.714" height="25.143" x="69.143" y="106.857" fill="#FFF" transform="rotate(180 88 119.429)"/>
+        <polygon fill="#FFF" points="88 25.143 150.857 94.316 150.857 132 88 65.408 25.143 132 25.143 94.316"/>
+      </g>
+    </g>
+    <g mask="url(#oval_15-c)" opacity=".505">
+      <g transform="translate(689.833 22.667)">
+        <circle cx="80" cy="80" r="80" fill="#1469EB"/>
+        <rect width="34.286" height="22.857" x="62.857" y="97.143" fill="#FFF" transform="rotate(180 80 108.571)"/>
+        <polygon fill="#FFF" points="80 22.857 137.143 85.742 137.143 120 80 59.462 22.857 120 22.857 85.742"/>
+      </g>
+    </g>
+    <polyline stroke="#FFF" stroke-width="5" points="205.333 97.333 242 97.333 242 134" mask="url(#oval_15-c)" opacity=".597" transform="matrix(-1 0 0 1 447.333 0)"/>
+    <polyline stroke="#FFF" stroke-width="5" points="682.5 15.333 719.167 15.333 719.167 52" mask="url(#oval_15-c)" opacity=".597" transform="matrix(-1 0 0 1 1401.667 0)"/>
+    <g mask="url(#oval_15-c)" opacity=".295">
+      <g transform="translate(27.5 106.333)">
+        <circle cx="49.5" cy="49.5" r="49.5" fill="#1469EB"/>
+        <rect width="21.214" height="14.143" x="38.893" y="60.107" fill="#FFF" transform="rotate(180 49.5 67.179)"/>
+        <polygon fill="#FFF" points="49.5 14.143 84.857 53.053 84.857 74.25 49.5 36.792 14.143 74.25 14.143 53.053"/>
+      </g>
+    </g>
+    <g mask="url(#oval_15-c)" opacity=".295">
+      <g transform="translate(377.667 29.333)">
+        <circle cx="36.667" cy="36.667" r="36.667" fill="#1469EB"/>
+        <rect width="15.714" height="10.476" x="28.81" y="44.524" fill="#FFF" transform="rotate(180 36.667 49.762)"/>
+        <polygon fill="#FFF" points="36.667 10.476 62.857 39.298 62.857 55 36.667 27.253 10.476 55 10.476 39.298"/>
+      </g>
+    </g>
+    <circle cx="77.917" cy="48.583" r="22.917" fill="#B6CEFF" fill-opacity=".65" mask="url(#oval_15-c)"/>
+    <circle cx="548" cy="93.5" r="36.667" fill="#B6CEFF" fill-opacity=".65" mask="url(#oval_15-c)"/>
+    <circle cx="130.167" cy="311.667" r="64.167" fill="#FFF" fill-opacity=".2" mask="url(#oval_15-c)"/>
+    <circle cx="36.667" cy="401.5" r="18.333" fill="#FFF" fill-opacity=".5" mask="url(#oval_15-c)"/>
+    <circle cx="271.333" cy="34.833" r="12.833" fill="#FFF" fill-opacity=".3" mask="url(#oval_15-c)"/>
+    <g mask="url(#oval_15-c)">
+      <use fill="#000" filter="url(#oval_15-d)" xlink:href="#oval_15-e"/>
+      <use fill="#FFF" xlink:href="#oval_15-e"/>
+    </g>
+  </g>
+</svg>

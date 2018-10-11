@@ -1,0 +1,12 @@
+.slider {
+  &--centered {
+    .VueCarousel-inner {
+      justify-content: center;
+      transform: translate(0) !important;
+    }
+  }
+  &__arrow {
+    color: $blueD1;
+    font-size: 35px;
+  }
+}

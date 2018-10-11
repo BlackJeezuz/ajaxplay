@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="17.5" cy="17.5" r="17.5"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-5">
+            <g id="Group">
+                <g id="Oval-3">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <circle stroke="#555555" stroke-width="1" cx="17.5" cy="17.5" r="17"></circle>
+                </g>
+                <polygon id="Path" fill="#919191" points="17.5 4 17.5 22.4575298 9 17.5976373"></polygon>
+                <polygon id="Path-Copy-2" fill="#414141" transform="translate(21.750000, 13.228765) scale(-1, 1) translate(-21.750000, -13.228765) " points="26 4 26 22.4575298 17.5 17.5976373"></polygon>
+                <polygon id="Path-Copy" fill="#000000" opacity="0.7" points="17.5 13.8780488 17.5 22.4612454 9 17.5968572"></polygon>
+                <polygon id="Path-Copy-3" fill="#000000" opacity="0.7" transform="translate(21.750000, 18.169209) scale(-1, 1) translate(-21.750000, -18.169209) " points="26 13.8780488 26 22.4603685 17.5 17.5989423"></polygon>
+                <polygon id="Path-2" fill="#919191" points="9 19.1393222 17.5 30.7530488 17.5 24.0060772"></polygon>
+                <polygon id="Path-2-Copy" fill="#414141" transform="translate(21.750000, 24.946185) scale(-1, 1) translate(-21.750000, -24.946185) " points="17.5 19.1393222 26 30.7530488 26 24.0060772"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

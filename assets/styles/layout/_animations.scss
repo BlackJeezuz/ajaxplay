@@ -1,0 +1,146 @@
+.roll-right {
+  &-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  &-enter {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+@keyframes pencil {
+  0% {
+    transform: translateX(calc(-100% - 120px))
+  }
+  50% {
+    transform: translateX(calc(100% + 120px))
+  }
+  100% {
+    transform: translateX(calc(100% + 120px))
+  }
+}
+
+@keyframes pencil-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes eraser-transformation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes eraser {
+  0% {
+    transform: translateX(calc(-100% - 60px));
+  }
+  35% {
+    transform: translateX(0);
+    background-size: 20px 1px;
+    width: calc(100% + 90px);
+    opacity: 1;
+  }
+  50% {
+    background-size: 10px 1px;
+    width: 1000%;
+    opacity: 0;
+  }
+  100% {
+    background-size: 10px 1px;
+    width: 1000%;
+    opacity: 0;
+  }
+}
+
+.placeholder-animation {
+  padding-bottom: 15px;
+  overflow-x: hidden;
+
+  &__pencil {
+    border-bottom: 1px solid $greyD2;
+    animation: pencil 16s linear 1s infinite;
+    padding: 5px 0;
+    position: relative;
+    transform: translateX(calc(-100% - 120px));
+    width: calc(100% + 120px);
+    &:before,
+    &:after {
+      font-family: $font-name;
+      font-size: 50px;
+      position: absolute;
+      z-index: 3;
+      animation-iteration-count: infinite;
+    }
+    &:before {
+      content: $icon-pencil;
+      left: calc(100% + 10px);
+      bottom: 100%;
+      transform-origin: 0 100%;
+      animation-name: pencil-rotation;
+      animation-duration: 3s;
+      transform: rotate(10deg);
+    }
+
+    &:after {
+      content: $icon-eraser;
+      animation-name: eraser-transformation;
+      animation-duration: 1s;
+      transform: translateY(0);
+      left: calc(0% - 10px);
+      bottom: calc(100% - 10px);
+    }
+  }
+
+  &__eraser {
+    background-image: linear-gradient(90deg, $greyD2, $greyD2 75%, transparent 75%, transparent 100%);
+    background-size: 20px 1px;
+    height: 1px;
+    animation: eraser 16s linear 2.7s infinite;
+    margin-top: -1px;
+    width: calc(100% + 60px);
+    transform: translateX(calc(-100% - 60px));
+  }
+}

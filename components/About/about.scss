@@ -1,0 +1,218 @@
+.about {
+  padding: 80px 0 70px 0;
+
+  @media only screen  and (max-width : 767px) {
+    padding: 60px 0 70px 0;
+
+    &__title,
+    &__subtitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 18px;
+    }
+
+    &--bolder {
+      font-weight: 500;
+    }
+
+    &--padded {
+      padding: 25px 0;
+
+      @media only screen  and (max-width : 767px) {
+        padding: 25px 0 5px 0;
+      }
+    }
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__subtitle {
+    padding-top: 72px;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    flex-wrap: wrap;
+
+    &__column {
+      width: calc(50%-30px);
+      font-weight: 300;
+
+      @media only screen  and (max-width : 767px) {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+      &:first-child {
+        p:nth-child(odd) {
+          font-weight: 500;
+        }
+      }
+
+      &:last-child {
+        p:nth-child(even) {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &__text {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}
+
+.about-stats {
+  position: relative;
+  padding: 50px 0;
+  max-width: 545px;
+
+  @media only screen  and (max-width : 1030px) {
+    max-width: 100%;
+  }
+
+  @media only screen  and (max-width : 767px) {
+    padding: 30px 0;
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border-top: 1px dashed $greyD2;
+    border-bottom: 1px dashed $greyD2;
+
+    @media only screen  and (max-width : 767px) {
+      border-style: solid;
+      border-color: $grey;
+    }
+    &:first-child {
+      top: 0;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+
+    &:after,
+    &:before {
+      @extend %square-icon;
+      content: '';
+      @include centY;
+
+      @media only screen  and (max-width : 767px) {
+        display: none;
+      }
+    }
+
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+  }
+
+  &__caption {
+    font-size: 32px;
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 24px;
+    }
+    &-standart {
+      font-weight: normal;
+      padding: 0 5px;
+    }
+  }
+
+  &__img {
+    margin-top: 10px;
+    max-width: 355px;
+
+    @media only screen  and (max-width : 767px) {
+      max-width: 300px;
+    }
+
+    @media only screen  and (max-width : 340px) {
+      max-width: 280px;
+    }
+
+    @media only screen  and (max-width : 320px) {
+      max-width: 260px;
+    }
+  }
+}
+
+.about-exchanges {
+  &__title {
+    color: $blue;
+    margin-bottom: 30px;
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 14px;
+    }
+  }
+
+  &__slider {
+    &-wrap {
+      max-width: 400px;
+
+      @media only screen  and (max-width : 767px) {
+        max-width: 280px;
+      }
+    }
+  }
+  &__slide {
+    &.swiper-slide-active,
+    &.swiper-slide-next {
+      color: $blueD1;
+    }
+    &:not(:first-child) {
+      &:before {
+        content: $icon-next;
+        font-family: $font-name;
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translate(-100%, -50%);
+
+        @media only screen  and (max-width : 767px) {
+          left: -8px;
+        }
+      }
+    }
+  }
+  &__item {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+
+    @media only screen  and (max-width : 767px) {
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+}

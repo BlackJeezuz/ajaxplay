@@ -1,0 +1,107 @@
+// Default styles of dropdown.
+// If you want to add your styles - make new .scss file. For example: assets/styles/tools/dropdown_vars.scss
+$dropBorderColor: $greyD1!default;
+$dropTextColor: $greyD2!default;
+$dropFontSize: 14px!default;
+$dropMin-width: 230px!default;
+$dropFontWeight: 500!default;
+$dropArrowPath: icon-font/dropdown-icon!default;
+$dropArrowWidth: 10px!default;
+$dropArrowHeight: 8px!default;
+$dropArrowPosition: 10px!default;
+
+.dropdown {
+  $p: 10px;
+  position: relative;
+  color: $dropTextColor;
+  font-size: $dropFontSize;
+  min-width: $dropMin-width;
+  font-weight: $dropFontWeight;
+
+  &__container {
+    position: relative;
+  }
+
+  &__header {
+    position: relative;
+    display: block;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0 $p*2 0 $p;
+    border-radius: 5px;
+    border: 1px solid $dropBorderColor;
+    background: #fff;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-size: cover;
+      width: $dropArrowWidth;
+      height: $dropArrowHeight;
+      right: $dropArrowPosition;
+      background-repeat: no-repeat;
+      transition: transform .2s ease;
+      background-image: url('~/assets/#{$dropArrowPath}.svg');
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__placeholder {
+    color: $grey;
+  }
+
+  &__list {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    display: none;
+    width: 100%;
+    min-height: 20px;
+    background-color: $white;
+    border: 1px solid $dropBorderColor;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 5px $p;
+    cursor: pointer;
+    &:not(.disabled):hover {
+      color: $blue;
+    }
+    &.disabled {
+      color: $grey;
+      cursor: default;
+    }
+  }
+  &.active {
+    .dropdown__list {
+      display: block;
+    }
+    .dropdown__header {
+      border-radius: 5px 5px 0 0;
+      border-bottom-color: $white;
+
+      &::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  &.disabled {
+    .dropdown__header {
+      cursor: default;
+    }
+  }
+}
+

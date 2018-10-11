@@ -1,6 +1,6 @@
-# vue-start
+# anycash
 
-> Nuxt.js project
+> anycash your online wallet
 
 ## Build Setup
 

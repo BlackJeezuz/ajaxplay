@@ -1,0 +1,39 @@
+.checkbox {
+  position: relative;
+  &__input {
+    display: none;
+
+    &:not(:disabled) {
+      & + .checkbox__label {
+        cursor: pointer;
+      }
+    }
+
+    &:checked {
+      & + .checkbox__label {
+        font-weight: 500;
+        &:before {
+          background-image: url('~@/components/UiKit/assets/icons/checkbox-label.svg');
+        }
+      }
+    }
+  }
+  &__label {
+    position: relative;
+    padding-left: 29px;
+    font-size: 14px;
+    line-height: 14px;
+
+    &:before {
+      @extend %bg-cover;
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 0;
+      box-sizing: border-box;
+      width: 14px;
+      height: 14px;
+      border: 1px solid $blue;
+    }
+  }
+}

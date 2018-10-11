@@ -1,0 +1,262 @@
+.rate {
+  padding: 80px 0;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__info {
+    margin-bottom: 50px;
+    font-weight: 500;
+    text-align: justify;
+  }
+  &__subtitle {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+  &__block {
+    width: calc(50% - 20px);
+  }
+
+
+  &-table {
+    font-weight: bold;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}
+
+.rate-converter {
+  margin-bottom: 40px;
+  &__row {
+    padding: 25px;
+    border: 1px solid $grey;
+    display: flex;
+    align-items: flex-start;
+    transition: border-color .3s;
+
+    &:hover {
+      border-color: $blue;
+
+      .rate-converter__caption,
+      .rate-converter__currency  {
+        color: $blue;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__caption {
+    transition: color .3s;
+    margin-right: 10px;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+      flex-wrap: wrap;
+    }
+    &:not(:last-child) {
+      margin-right: pxtopercent(50, 1000);
+    }
+
+    &--body {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    margin-right: 25px;
+  }
+
+  &__input {
+    width: 80px;
+    height: 30px;
+    padding: 0 10px;
+    margin-right: 15px;
+    line-height: 17px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $greyD2;
+    border: 1px solid $greyD1;
+  }
+
+  &__subrow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 10px 0;
+    width: 100%;
+    &:not(:last-child) {
+      border-bottom: 1px solid $grey;
+    }
+
+    &:not(:first-child) {
+      padding-top: 10px;
+    }
+  }
+
+  &__currency {
+    margin-right: 20px;
+  }
+
+  &__item { 
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 110px;
+    padding: 5px 0;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:hover {
+      .rate-tooltip {
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__value {
+    display: inline-block;
+    max-width: 60px;
+    @extend %text-overflow;
+  }
+}
+
+.rate-tooltip {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 100%);
+  padding: 7px 15px;
+  white-space: nowrap;
+  border: 1px solid $greyD1;
+  background-color: $white;
+  border-radius: 5px;
+  transition: opacity .3s;
+  opacity: 0;
+  z-index: -1;
+}
+
+@media only screen  and (max-width : 767px) {
+  .rate {
+    padding: 50px 0;
+
+    &__content {
+      padding-bottom: 0;
+    }
+    &__info {
+      margin-bottom: 30px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    &__block {
+      width: 100%;
+    }
+  }
+
+  .rate-converter {
+    font-size: 14px;
+
+    &__block {
+      width: 100%;
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+
+      &--head {
+        display: flex;
+
+        .icon--right-arrow {
+          margin-left: auto;
+          color: $blueD1;
+          transform: rotate(-90deg);
+          transition: transform .3s;
+        }
+      }
+
+      &--body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s, padding .3s;
+      }
+    }
+
+    &__row {
+      padding: 13px 15px;
+      flex-wrap: wrap;
+
+      &.is-active {
+        .rate-converter__block--body {
+          max-height: 700px;
+          padding: 30px 0;
+        }
+
+        .icon--right-arrow {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &__subrow {
+      padding: 0;
+      flex-direction: column;
+
+      &:not(:first-child) {
+        padding: 0;
+      }
+
+      &:not(:last-child) {
+        border: none;
+      }
+    }
+    &__input {
+      width: 110px;
+    }
+    &__item {
+      width: 100%;
+      max-width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    &__caption {
+      min-width: 40px;
+      margin-right: 0;
+    }
+  }
+
+  .rate-tooltip {
+    display: inline-block;
+    padding: 0;
+    position: static;
+    margin-left: auto;
+    opacity: 1;
+    z-index: 1;
+    transform: none;
+    border: none;
+    color: $holder-color;
+  }
+
+  .rate-table {
+    margin-bottom: 100px;
+  }
+}

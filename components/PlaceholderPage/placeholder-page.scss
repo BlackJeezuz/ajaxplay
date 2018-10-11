@@ -1,0 +1,38 @@
+.placeholder-page {
+  background-image: url(/assets/svg/placeholder.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 550px;
+  .placeholder-animation {
+    padding-top: 100px;
+    @media screen and (max-width: 767px) {
+      padding-top: 80px;
+    }
+  }
+}
+
+.placeholder-content {
+  padding-top: 100px;
+  text-align: right;
+
+  .btn {
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+
+.placeholder-title {
+  font-size: 36px;
+  font-weight: normal;
+  @media only screen  and (max-width : 767px) {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.placeholder-text,
+.placeholder-title {
+  margin-bottom: 50px;
+}

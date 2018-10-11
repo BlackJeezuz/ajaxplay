@@ -1,0 +1,79 @@
+.placeholder {
+  .popup {
+    background-image: url('~assets/svg/placeholder-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position-y: -31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 0 0;
+    text-align: right;
+    @media screen and (max-width: 767px){
+      background-size: contain;
+      background-position-y: -38px;
+    }
+  }
+
+  &--large {
+    .popup {
+      max-width: 600px;
+      width: 100%;
+      @media screen and (max-width: 767px){
+        min-width: 320px;
+      }
+    }
+  }
+
+  &__header,
+  &__body {
+    text-align: right;
+    padding-right: 40px;
+    @media screen and (max-width: 767px) {
+      padding-right: 30px;
+    }
+  }
+
+  &__header {
+    @media screen and (max-width: 767px) {
+      font-weight: bold;
+    }
+  }
+
+  &__body {
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media screen and (max-width: 767px) {
+      align-items: stretch;
+      padding-left: 30px;
+      height: auto;
+      display: block;
+    }
+    .btn {
+      width: 256px;
+      text-align: center;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    padding-bottom: 60px;
+  }
+  &__footer {
+    height: 90px;
+    padding: 0 40px;
+    background-color: $greyL1;
+  }
+
+  .placeholder-animation {
+    padding-top: 55px;
+    @media screen and (max-width: 767px) {
+      margin: 20px auto 0 0;
+    }
+  }
+}

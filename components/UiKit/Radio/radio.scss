@@ -1,0 +1,44 @@
+.radio {
+  &__item {
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__input {
+    display: none;
+    
+    & + .radio__label {
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+    }
+
+    &:checked {
+      & + .radio__label {
+        &:before {
+          background-color: $blue;
+          box-shadow: inset 0 0 0 3px #fff;
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    padding-left: 29px;
+    font-size: 14px;
+
+    &:before {
+      content: '';
+      @include centY;
+      left: 0;
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid $blue;
+    }
+  }
+}

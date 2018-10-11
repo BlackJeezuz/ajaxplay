@@ -1,0 +1,78 @@
+.wm_accept_ico,
+.wm_attested_ico {
+  background-repeat: no-repeat;
+}
+.wm_accept_ico {
+  background-image: url('~assets/svg/paysystem/wm_accept.svg');  
+}
+
+.wm_attested_ico {
+  background-image: url('~assets/svg/paysystem/wm_attested.svg');
+}
+
+$paysystem-list: advcash, btc, bitcoincash, btce, exmo, nixmoney, litecoin, okpay, oshchad, cashmoscow, cashkiev, cashodessa, cashalmaty, cashbishkek, ripple, otp, payeer, ether, tether, paymer, perfect, privat24, pumb, qiwi, sberbank, uamoney, visamc, wex, webmoney, yandex, w1, zpayment, mono, anycash, usd, rur, uah;
+$paysystem-list-white: advcash, btc, bitcoincash, oshchad, cashmoscow, cashkiev, cashodessa, litecoin, cashalmaty, cashbishkek, ripple, exmo, nixmoney, btce, otp, payeer, ether, tether, paymer, perfect, privat24, pumb, qiwi, sberbank, uamoney, visamc, wex, webmoney, yandex, w1, zpayment, mono;
+$paysystem-list-grey: advcash, btc, bitcoincash, btce, exmo, nixmoney, litecoin, okpay, oshchad, otp, payeer, ether, ripple, tether, paymer, perfect, privat24, pumb, qiwi, sberbank, visamc, webmoney, yandex, wex, w1, zpayment, mono;
+
+@each $paysystem in $paysystem-list {
+  .#{$paysystem} {
+      background-image: url('~assets/svg/paysystem/#{$paysystem}.svg');
+      background-repeat: no-repeat;
+  }
+}
+@each $paysystem in $paysystem-list-grey {
+  .#{$paysystem + _grey} {
+      background-image: url('~assets/svg/paysystem/#{$paysystem}_grey.svg');
+      background-repeat: no-repeat;
+  }
+}
+@each $paysystem in $paysystem-list-white {
+  .#{$paysystem + _white} {
+    background-image: url('~assets/svg/paysystem/#{$paysystem}_white.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.uamoney {
+  @extend .visamc;
+}
+.uamoney_grey {
+  @extend .visamc_grey;
+}
+.uamoney_white {
+  @extend .visamc_white;
+}
+
+.bitcoin {
+  @extend .btc;
+}
+.bitcoin_grey {
+  @extend .btc_grey;
+}
+.bitcoin_white {
+  @extend .btc_white;
+}
+
+.hovered-white-icons-bl:hover,
+.hovered-white-icons-bl.active {
+  // @each $paysystem in $paysystem-list {
+  //   .#{$paysystem} {
+  //     @extend .#{$paysystem + _white}!optional;
+  //   }
+  // }
+  @each $paysystem in $paysystem-list-white {
+    .#{$paysystem} {
+      background-image: url('~assets/svg/paysystem/#{$paysystem}_white.svg');
+      background-repeat: no-repeat;
+    }
+  }
+  .uamoney {
+    background-image: url('~assets/svg/paysystem/visamc_white.svg');
+  }
+}
+
+.ps-icon {
+  @extend %icon;
+  width: 24px;
+  height: 24px;
+}

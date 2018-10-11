@@ -1,0 +1,25 @@
+.information {
+  display: flex;
+
+  &__column {
+    &:first-child {
+      margin-right: 50px;
+      .information__text:nth-child(odd) {
+        font-weight: 500;
+      }
+    }
+    &:last-child {
+      .information__text:nth-child(even) {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

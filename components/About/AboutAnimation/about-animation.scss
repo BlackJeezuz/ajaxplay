@@ -1,0 +1,456 @@
+.about-animation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 64px 30px 0 0;
+  width: 545px;
+
+  @media only screen  and (max-width : 767px) {
+    width: 268px;
+    padding: 28px 21px 0 0;
+  }
+
+  &__block-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 40px 0 40px 140px;
+    border-radius: 50%;
+    background-image: url('~assets/svg/circle.svg');
+    background-size: contain;
+    background-color: no-repeat;
+
+    @media only screen  and (max-width : 767px) {
+      width: 180px;
+      height: 180px;
+      padding: 15px 0 0 40px;
+    }
+  }
+
+  &__indicators,
+  &__main-icon {
+    padding-left: 40px;
+  }
+
+  &__indicators {
+    display: flex;
+    margin-bottom: 20px;
+
+    @media only screen  and (max-width : 767px) {
+      margin-bottom: 8px;
+    }
+  }
+  &__indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: $grey;
+    transition: background-color .3s;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &.is-active {
+      background-color: $blue;
+    }
+
+    &.is-active {
+      background-color: $blue;
+    }
+
+    @media only screen  and (max-width : 767px) {
+      width: 3px;
+      height: 3px;
+
+      &:not(:last-child) {
+        margin-right: 5.6px;
+      }
+    }
+
+    &--secondary {
+      background-color: $greyD1;
+
+      &:not(:last-child) {
+        margin: 0 0 12px 0;
+
+        @media only screen  and (max-width : 767px) {
+          margin: 0 0 6px 0;
+        }
+      }
+      &.is-active {
+        background-color: $greyD2;
+      }
+    }
+  }
+
+  &__main-icon {
+    margin-bottom: 42px;
+    font-size: 108px;
+    color: $blue;
+    font-weight: normal;
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 46px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 108px;
+    background-image: url('~assets/svg/man.svg');
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media only screen  and (max-width : 767px) {
+      width: 38px;
+      height: 46px;
+    }
+    &:before {
+      content: $icon-logo-white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      font-size: 25px;
+      font-family: $font-name;
+      border-radius: 50%;
+      color: rgba($white, .5);
+      background-color: $grey;
+
+      @media only screen  and (max-width : 767px) {
+        width: 13px;
+        height: 13px;
+        font-size: 11px;
+        background-color: $blue;
+      }
+    }
+    &--prime {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-10%, -50%);
+      width: 140px;
+      height: 250px;
+      background-color: $white;
+      border-top: 15px solid $white;
+      border-bottom: 15px solid $white;
+
+      @media only screen  and (max-width : 767px) {
+        width: 65px;
+        height: 115px;
+        border: none;
+        background-color: transparent;
+        background-image: url('~assets/svg/man-outer-blue.svg');
+      }
+      &:before {
+        background-color: $blue;
+
+        @media only screen  and (max-width : 767px) {
+          top: 10px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    @media only screen  and (max-width : 767px) {
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__text {
+    @media only screen  and (max-width : 767px) {
+      font-size: 10px;
+    }
+  }
+
+  &__block-left {
+    position: relative;
+    margin-right: 25px;
+
+    @media only screen  and (max-width : 767px) {
+      .about-animation__icon:first-child {
+        margin-bottom: 54px;
+      }
+    }
+    &:after,
+    &:before {
+      content: $icon-arrow-lg;
+      font-family: $font-name;
+      position: absolute;
+      right: 0;
+      font-size: 24px;
+      color: $greyD2;
+
+      @media only screen  and (max-width : 767px) {
+        font-size: 10px;
+      }
+    }
+
+    &:before {
+      top: 80px;
+      @media only screen  and (max-width : 767px) {
+        top: 26px;
+      }
+    }
+
+    &:after {
+      bottom: 128px;
+      transform: rotate(-90deg);
+      @media only screen  and (max-width : 767px) {
+        bottom: 60px;
+      }
+    }
+  }
+
+  &__arrow {
+    display: block;
+    margin: 28px 0 76px 15px;
+    color: $grey;
+    font-size: 24px;
+
+    @media only screen  and (max-width : 767px) {
+      display: none;
+    }
+  }
+
+  &__wallets {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 255px;
+    height: 172px;
+
+    @media only screen  and (max-width : 767px) {
+      width: 117px;
+      height: 74px;
+    }
+    &:before,
+    &:after {
+      content: $icon-right;
+      position: absolute;
+      font-family: $font-name;
+      color: $greyD2;
+      transition: color .3s;
+
+      @media only screen  and (max-width : 767px) {
+        font-size: 7px;
+      }
+    }
+    &:before {
+      left: 0;
+      top: 12px;
+
+      @media only screen  and (max-width : 767px) {
+        top: 6px;
+      }
+    }
+
+    &:after {
+      bottom: 0;
+      right: 0;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    font-size: 16px;
+    color: $greyD2;
+
+    &:after,
+    &:before {
+      display: block;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      content: $icon-arrow-lg;
+      font-family: $font-name;
+    }
+
+    &--left {
+      top: 5px;
+      right: 48px;
+      transform: rotate(-90deg);
+    }
+
+    &--right {
+      left: 0;
+      bottom: 0;
+      transform: rotate(90deg);
+    }
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 7px;
+      &--left {
+        top: 2px;
+        right: 21px;
+      }
+    }
+  }
+  &__wallet {
+    position: absolute;
+    font-size: 40px;
+    color: $greyD1;
+    transition: color .3s;
+
+    @media only screen  and (max-width : 767px) {
+      font-size: 17px;
+    }
+  
+    &:nth-child(1) {
+      top: 0;
+      left: 40px;
+
+      @media only screen  and (max-width : 767px) {
+        left: 26px;
+      }
+    }
+    &:nth-child(2) {
+      top: 30px;
+      left: 131px;
+
+      @media only screen  and (max-width : 767px) {
+        top: 17px;
+        left: 65px;
+      }
+    }
+
+    &:nth-child(3) {
+      right: 0;
+      bottom: 42px;
+
+      @media only screen  and (max-width : 767px) {
+        bottom: 17px;
+      }
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    right: 0;
+    bottom: 164px;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen  and (max-width : 767px) {
+      bottom: 75px;
+    }
+  }
+
+  &__bottom-wallet {
+    right: 0;
+    bottom: 0;
+    padding: 0 0 27px 26px;
+
+    @media only screen  and (max-width : 767px) {
+      padding: 0 0 12px 11px;
+    }
+  }
+
+  &--main {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    @media only screen  and (max-width : 1030px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: initial;
+      margin: 30px auto 0 auto;
+    }
+    .about-animation__wallets {
+      &.is-active-1:before,
+      &.is-active-1 .about-animation__wallet:nth-child(1),
+      &.is-active-2 .about-animation__arrows,
+      &.is-active-2 .about-animation__wallet:nth-child(2),
+      &.is-active-3:after,
+      &.is-active-3 .about-animation__wallet:nth-child(3) {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.about-animation--secondary {
+  position: relative;
+  margin: 40px 40px 22px 0;
+  float: left;
+
+  @media only screen  and (max-width : 767px) {
+    float: none;
+    margin: 0 auto 40px auto;
+  }
+
+  .about-animation {
+    &__text,
+    &__title,
+    &__block-left:after,
+    &__block-left:before {
+      color: $white;
+    }
+
+    &__icon:before,
+    &__arrow {
+      display: none;
+    }
+
+    &__icon {
+      background-image: url('~@/assets/svg/man-blue.svg');
+
+      &--prime {
+        border: none;
+        background-color: transparent;
+      }
+
+      &:first-child {
+        margin-bottom: 108px;
+      }
+    }
+
+    &__block-main {
+      background-image: url('~assets/svg/circle-white.svg');
+    }
+
+    $main-color: rgba(#fff, .5);
+
+    &__indicator {
+      background-color: $main-color;
+      &.is-active {
+        background-color: $white;
+      }
+    }
+
+    &__main-icon,
+    &__wallet,
+    &__arrows,
+    &__wallets:before,
+    &__wallets:after  {
+      color: $main-color;
+    }
+
+    &__wallets {
+      &.is-active-1:before,
+      &.is-active-1 .about-animation__wallet:nth-child(1),
+      &.is-active-2 .about-animation__arrows,
+      &.is-active-2 .about-animation__wallet:nth-child(2),
+      &.is-active-3:after,
+      &.is-active-3 .about-animation__wallet:nth-child(3) {
+        color: $white;
+      }
+    }
+  }
+}

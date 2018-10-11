@@ -1,15 +1,15 @@
-@mixin centY {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 @mixin stretch {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @mixin cent {
@@ -25,8 +25,10 @@
   transform: translateX(-50%);
 }
 
-@function pxtopercent($target, $parent: 1170) {
-  @return percentage($target / $parent);
+@mixin centY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @mixin clearfix {
@@ -35,6 +37,21 @@
     display: block;
     clear: both;
   }
+}
+
+@mixin scrollbar($width, $color) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    box-shadow: inset $width * 2 0 0 $color;
+  }
+}
+
+@function pxtopercent($target, $parent: 1170) {
+  @return percentage($target / $parent);
 }
 
 @mixin triangle($direction, $color: currentcolor, $width: 1em, $height: 2em) {
@@ -69,15 +86,17 @@
   }
 }
 
-@mixin scrollbar($width, $color) {
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: $width;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 2px;
-    box-shadow: inset $width * 2 0 0 $color;
-  }
+// ********************mixin from Dmitriy******************
+@mixin flex($direction: flex-start, $justify:center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
 }
+
+@mixin flex-c($direction:column){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+

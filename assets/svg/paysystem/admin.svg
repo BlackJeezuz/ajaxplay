@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin">
+            <g id="Group">
+                <circle id="Oval-4" fill="#316199" cx="50" cy="50" r="50"></circle>
+                <path d="M62.4452533,62.3885338 L38.5224313,62.3885338 L33.5173019,76.7676768 L22.3618016,76.7676768 L45.6907947,15.0094697 L55.3193063,15.0094697 L78.6907158,76.7676768 L67.4927991,76.7676768 L62.4452533,62.3885338 Z M41.5339923,53.7355982 L59.4336924,53.7355982 L50.4838423,28.1161222 L41.5339923,53.7355982 Z" id="А" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

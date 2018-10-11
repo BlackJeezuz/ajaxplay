@@ -1,2 +1,33 @@
-$active-color: #42b983;
-$remove-color: #dd5145;
+@import '~@/assets/styles/layout/_iconfont__variables.scss';
+
+$font-name: 'social';
+$mobileWidth: 768px;
+
+$greyD2: #666666;
+$greyD1: #aeaeae;
+$grey: #e5e5e5;
+$greyL1: #f0f0f0;
+$greyL2: #EFEFEF;
+$holder-color: #9e9e9e;
+
+$text-color: #535353;
+
+$whiteD1: #f7f7f7;
+$white: #ffffff;
+ 
+$blueD1: #124fe6;
+$blue: #1469eb;
+$blueL1: #7da3ef;
+$blueL2: #26bfff;
+$blueL3: #B6CEFF;
+$blueL4: #6b8feb;
+
+$red: #cc003c;
+
+$orange: #da8104;
+
+$green: #27b33b;
+
+// ********************variables from Dmitriy******************
+$Roboto: 'Roboto';
+$fontSize: 14px;

@@ -1,0 +1,68 @@
+@import 'normalize';
+@import 'fonts';
+@import 'base';
+@import 'uikit';
+@import 'iconfont__icons';
+@import 'paysystems';
+@import 'animations';
+@import 'header';
+@import 'footer';
+@import 'popup';
+@import 'icons';
+
+%flex-cent {
+  display: flex;
+  align-items: center;
+}
+.section--bordered {
+  border-top: 1px dashed $greyD2;
+}
+
+.wrapper {
+  @extend %wrapper;
+  &--flex {
+    @extend %flex-cent;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &--flex {
+    @extend %flex-cent;
+  }
+
+  &--sm {
+    max-width: 990px;
+  }
+
+  @media only screen  and (max-width : 1030px) {
+    padding: 0 30px;
+  }
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .footer {
+    margin-top: auto;
+  }
+}
+
+.mob-disp {
+  display: none;
+
+  @media only screen  and (max-width : 767px) {
+    display: inline-block;
+  }
+}
+
+.mob-hidden {
+  display: inline-block;
+
+  @media only screen  and (max-width : 767px) {
+    display: none;
+  }
+}

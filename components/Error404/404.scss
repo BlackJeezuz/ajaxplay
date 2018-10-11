@@ -1,0 +1,83 @@
+
+.error-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: $blueD1;
+  background-image: linear-gradient(to top, $blue 0%, $blueL2 100%);
+  color: $white;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    @include centX;
+    bottom: 10%;
+    width: 100%;
+    max-width: 1000px;
+    height: 151px;
+    background-image: url('~/assets/svg/logos.svg');
+    background-size: contain;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+.error {
+  display: flex;
+  flex: 1;
+  margin: 110px auto 30px auto;
+
+  &__code {
+    margin-right: pxtopercent(100, 1000);
+    text-align: right;
+    &-number {
+      font-size: 48px;
+    }
+  }
+
+  &__caption {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: inherit;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    color: $white;
+
+    &:hover {
+      border-color: $grey;
+    }
+  }
+}
+
+@media only screen  and (max-width : 767px) {
+  .error {
+    flex-wrap: wrap;
+    margin-top: 50px;
+    &__code {
+      width: 100%;
+      margin: 0 0 30px 0;
+      text-align: left;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__btn {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

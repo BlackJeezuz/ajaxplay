@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>wex-disabled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="80.247638%" y1="100%" x2="80.2476397%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#9B9B9B" offset="0%"></stop>
+            <stop stop-color="#CBCBCB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wex-disabled" fill-rule="nonzero">
+            <g id="Artboard">
+                <circle id="Oval" fill="url(#linearGradient-1)" cx="10" cy="10" r="10"></circle>
+                <g id="wex-blue" transform="translate(1.000000, 7.571429)" fill="#FFFFFF">
+                    <polygon id="Path" points="0 0 1.11390636 4.85714286 2.69393827 4.85714286 3.67778537 1.9162048 4.49302626 4.85714286 6.13525754 4.85714286 7.28571429 0 5.73754504 0 5.25862297 2.82736739 4.49302626 0 2.87129883 0 2.10842086 2.82736739 1.53351644 0"></polygon>
+                    <polygon id="Path-2" points="7.85714286 0 7.85714286 4.85714286 12.2857143 4.85714286 12.2857143 3.66655157 9.5849972 3.66655157 9.5849972 2.76587916 12.0127568 2.76587916 12.0127568 1.73725093 9.5849972 1.73725093 9.5849972 1.04605787 12.2092067 1.04605787 12.2092067 0"></polygon>
+                    <polygon id="Path-2-Copy" points="12.6794863 0 14.2887973 2.32912034 12.5714286 4.84096401 14.4031081 4.85714286 15.3086906 3.44713666 16.2059356 4.84096401 18.1428571 4.85714286 16.3929797 2.32912034 18.0459526 0 16.2059356 0 15.3275047 1.47153539 14.4031081 0"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

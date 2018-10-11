@@ -1,0 +1,169 @@
+.main-section {
+  $content-margin: 62px;
+  padding: 148px 0 220px 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 0 40px 0;
+  }
+
+  &__content {
+    margin: $content-margin auto 0 auto;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      order: 1;
+      padding: 40px 0;
+      margin: 0 0 40px 0;
+      position: relative;
+      border-bottom: 2px solid rgba($white, .5);
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__title {
+    line-height: 70px;
+    font-size: 64px;
+    @media screen and (max-width: 767px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 32px;
+    font-weight: normal;
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 23px 0 0 23px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: right;
+    color: inherit;
+    margin: $content-margin 0 0 0;
+    white-space: nowrap;
+    @media screen and (max-width: 767px) {
+      order: 3;
+      align-self: flex-end;
+      margin-right: 30px;
+    }
+
+    @media only screen  and (max-width : 340px) {
+      width: 80px;
+      text-align: center;
+    }
+    &:before {
+      display: block;
+      font-family: $font-name;
+      content: $icon-wallet;
+      font-size: 80px;
+      margin-bottom: 10px;
+
+      @media only screen  and (max-width : 340px) {
+        font-size: 60px;
+      }
+    }
+    &:after {
+      font-family: $font-name;
+      content: $icon-plus;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      font-size: 46px;
+      color: #25BCFB;
+      background: $white;
+      border-radius: 50%;
+
+      @media only screen  and (max-width : 340px) {
+        font-size: 30px;
+      }
+    }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (min-width: 767px) and (max-width: 1140px) {
+      padding: 0 30px;
+    }
+
+    @media only screen  and (max-width : 767px) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.main-list {
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    order: 2;
+    padding: 0 0 30px 30px;
+  }
+  &__item {
+    position: relative;
+    padding-left: 30px;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 6px;
+        height: 40px;
+        border-left: 2px dashed #fff;
+        transform: translateY(100%);
+      }
+    }
+
+    &:before {
+      content: '';
+      @extend %icon;
+      @include centY;
+      left: 0;
+      background-image: url('~@/assets/svg/square.svg');
+      width: 14px;
+      height: 14px;
+    }
+  }
+  &__link {
+    color: inherit;
+  }
+}
+
+.main-advanteges {
+  display: inline-block;
+  margin: 50px 0 0 0;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  &__item {
+    position: relative;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    &:after {
+      font-family: $font-name;
+      content: $icon-logo-white;
+      @include centY;
+      left: 0;
+      font-size: 17px;
+      color: #fff;
+    }
+  }
+}

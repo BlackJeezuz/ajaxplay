@@ -1,0 +1,19 @@
+.popup-social {
+  text-align: center;
+  font-size: 32px;
+  &__link {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.popup-icon,
+.popup__footer-text {
+  text-align: center;
+}
+
+.popup__footer-text {
+  color: $text-color;
+}
+
