@@ -1,0 +1,5 @@
+export const PUSH_TODO = 'PUSH_TODO'
+export const SET_TODOS = 'SET_TODOS'
+export const EDIT_TODO = 'EDIT_TODO'
+export const SET_FILTER = 'SET_FILTER'
+export const CHECK_TODO = 'CHECK_TODO'

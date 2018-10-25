@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
-  <g fill="none" fill-rule="evenodd">
-    <ellipse cx="13.661" cy="14" fill="#1469EB" rx="13.661" ry="13.259"/>
-    <rect width="5.515" height="3.953" x="10.846" y="16.379" fill="#FFF" transform="rotate(180 13.603 18.355)"/>
-    <polygon fill="#FFF" points="13.661 3.294 24.182 14.329 24.182 20.341 13.661 9.718 3.139 20.341 3.139 14.329"/>
-  </g>
-</svg>

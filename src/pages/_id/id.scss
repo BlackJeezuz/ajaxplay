@@ -1,0 +1,18 @@
+.settings {
+  &__title {
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__field {
+    position: relative;
+
+    .checkbox {
+      &__label {
+        @include centY;
+        right: 0;
+      }
+    }
+
+  }
+}
