@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0 20px 40px;
 
   &:not(:last-child) {
     border-bottom: 2px solid #ccc;
@@ -30,8 +30,7 @@
     }
   }
   &__input-edit {
-    display: inline-block;
-    width: calc(100% - 140px);
+    width: 100%;
     padding-top: 5px;
     resize: none;
     min-height: 30px;
@@ -59,7 +58,7 @@
   }
 
   &__tooltip {
-    @include centY;
+    @extend %centY;
     left: 0;
     width: 30px;
     height: 30px;

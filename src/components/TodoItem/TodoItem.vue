@@ -17,11 +17,6 @@
     />
     <span class="todo-item__text" ref="text">{{ todo.text }}</span>
     <div class="btn-group">
-      <transition name="drop">
-        <div v-show="isTooltipDisplayed" class="todo-item__tooltip">
-          <nuxt-link class="todo-item__link material-icons" :to="`/${todo.id}`">settings</nuxt-link>
-        </div>
-      </transition>
       <button class="btn-default btn-edit" @click="handleEdit">edit</button>
       <button class="btn-default btn-delete material-icons" @click="handleRemove" title="Remove todo">close</button>
     </div>
@@ -43,11 +38,6 @@ export default {
       default: 'todo'
     },
     todo: Object
-  },
-  data () {
-    return {
-      isTooltipDisplayed: false
-    }
   },
   methods: {
     ...mapActions(['removeTodo', 'editTodo', 'checkTodo']),

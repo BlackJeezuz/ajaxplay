@@ -1,0 +1,18 @@
+%centY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%cent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%centX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
